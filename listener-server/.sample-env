@@ -1,0 +1,5 @@
+APPLICATION=Rockhopper Airship Listener
+PORT=3010
+SECRET=
+RCON_PORT=
+RCON_PASSWORD=
