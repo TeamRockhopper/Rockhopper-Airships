@@ -19,10 +19,6 @@ Crusher.addRecipe(<immersiveengineering:metal:19> * 2, <ore:clusterGold>, 8000, 
 Crusher.addRecipe(<immersiveengineering:metal:19>, <ore:orePoorGold>, 8000, null, 0);
 
 // Remove tin grit and make tin grit obtainable from the ore and clusters.
-Crusher.removeRecipe(<mekanism:dust:4>);
-Crusher.addRecipe(<mekanism:dust:4> * 2, <ore:oreTin>, 8000, null, 0);
-Crusher.addRecipe(<mekanism:dust:4> * 2, <ore:clusterTin>, 8000, null, 0);
-Crusher.addRecipe(<mekanism:dust:4>, <ore:orePoorTin>, 8000, null, 0);
 
 // Remove lead grit and make lead grit obtainable from the ore and clusters.
 Crusher.removeRecipe(<immersiveengineering:metal:11>);

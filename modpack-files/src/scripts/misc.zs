@@ -16,16 +16,6 @@ recipes.addShaped(<minecraft:shield>,
    [<minecraft:planks>, <minecraft:planks>, <minecraft:planks>]]);
 
 // Nerfs the recipe for hang glider wings.
-recipes.removeShaped(<openglider:hang_glider_part>);
-recipes.removeShaped(<openglider:hang_glider_part:1>);
-recipes.addShaped(<openglider:hang_glider_part>,
-	[[null, <ore:stickWood>, <ore:fabricHemp>],
-	[<ore:stickWood>, <ore:fabricHemp>, <ore:fabricHemp>],
-	[<ore:fabricHemp>, <ore:fabricHemp>, <ore:fabricHemp>]]);
-recipes.addShaped(<openglider:hang_glider_part:1>,
-	[[<ore:fabricHemp>, <ore:stickWood>, null],
-	[<ore:fabricHemp>, <ore:fabricHemp>, <ore:stickWood>],
-	[<ore:fabricHemp>, <ore:fabricHemp>, <ore:fabricHemp>]]);
 
 // Nerfs the recipe for the ender staff.
 recipes.removeShaped(<grapplemod:launcheritem>);
