@@ -3,10 +3,9 @@
 	"potion": "nutrition:nourished",
 	"amplifier": 0,
 	"minimum": 70,
-	"maximum": 90,
+	"maximum": 89,
 	"detect": "cumulative",
 	"nutrients": [
-		"dairy",
 		"fruit",
 		"grain",
 		"protein",

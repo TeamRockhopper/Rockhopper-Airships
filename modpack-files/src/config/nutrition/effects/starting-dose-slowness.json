@@ -3,7 +3,7 @@
 	"potion": "minecraft:slowness",
 	"amplifier": 1,
 	"minimum": 30,
-	"maximum": 95,
+	"maximum": 94,
 	"detect": "all",
 	"nutrients": [
 		"ztoxins"

@@ -2,7 +2,7 @@
 	"name": "ztoxins",
 	"icon": "minecraft:skull",
 	"color": "b54646",
-	"decay": 2.5,
+	"decay": 5.0,
 	"visible": true,
 	"enabled": true,
 	"food": {

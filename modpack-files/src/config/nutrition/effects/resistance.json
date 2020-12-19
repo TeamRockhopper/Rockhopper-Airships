@@ -4,7 +4,7 @@
 	"amplifier": 0,
 	"minimum": 90,
 	"maximum": 100,
-	"detect": "average",
+	"detect": "all",
 	"nutrients": [
 		"dairy",
 		"fruit",
