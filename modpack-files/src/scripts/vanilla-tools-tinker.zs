@@ -1,6 +1,9 @@
 import mods.immersiveengineering.MetalPress;
 import mods.tconstruct.Casting;
 
+// Add a recipe for converting Tinker's tools to vanilla Minecraft equivalents.
+recipes.addShaped(<minecraft:wooden_sword> * 1, [[<tconstruct:sword_blade>.withTag({Material: "wood"})], [<tconstruct:wide_guard>.withTag({Material: "wood"})], [<tconstruct:tool_rod>.withTag({Material: "wood"})]]);
+
 // Vanilla golden pickaxe obtained via casting.
 mods.tconstruct.Casting.addTableRecipe(<minecraft:golden_pickaxe>, <tconstruct:cast>.withTag({PartType: "tconstruct:pick_head"}), <liquid:gold>, 288, false, 200);
 
@@ -12,6 +15,9 @@ mods.tconstruct.Casting.addTableRecipe(<minecraft:golden_shovel>, <tconstruct:ca
 
 // Vanilla golden sword obtained via casting.
 mods.tconstruct.Casting.addTableRecipe(<minecraft:golden_sword>, <tconstruct:cast>.withTag({PartType: "tconstruct:sword_blade"}), <liquid:gold>, 288, false, 200);
+
+// Vanilla golden hoe obtained via casting.
+mods.tconstruct.Casting.addTableRecipe(<minecraft:golden_hoe>, <tconstruct:cast>.withTag({PartType: "tconstruct:kama_head"}), <liquid:gold>, 288, false, 200);
 
 // Thaumium sword is pressable using the IE metal press.
 mods.immersiveengineering.MetalPress.addRecipe(<thaumcraft:thaumium_sword>, <thaumcraft:ingot>, <immersiveengineering:mold:2>, 500);

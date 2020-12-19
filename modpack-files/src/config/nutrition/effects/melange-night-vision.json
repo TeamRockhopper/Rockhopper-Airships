@@ -1,0 +1,14 @@
+{
+	"name": "melange-night-vision",
+	"potion": "minecraft:night_vision",
+	"amplifier": 0,
+	"minimum": 98,
+	"maximum": 99,
+	"detect": "all",
+	"nutrients": [
+		"ztoxins"
+	],
+	"cumulative_modifier": 1,
+	"particles": "transparent",
+	"enabled": true
+}

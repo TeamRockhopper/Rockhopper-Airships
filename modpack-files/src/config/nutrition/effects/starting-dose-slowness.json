@@ -1,0 +1,14 @@
+{
+	"name": "starting-dose-slowness",
+	"potion": "minecraft:slowness",
+	"amplifier": 1,
+	"minimum": 30,
+	"maximum": 95,
+	"detect": "all",
+	"nutrients": [
+		"ztoxins"
+	],
+	"cumulative_modifier": 1,
+	"particles": "transparent",
+	"enabled": true
+}

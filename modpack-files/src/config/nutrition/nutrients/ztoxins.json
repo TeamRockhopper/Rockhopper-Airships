@@ -1,0 +1,24 @@
+{
+	"name": "ztoxins",
+	"icon": "minecraft:skull",
+	"color": "b54646",
+	"decay": 2.5,
+	"visible": true,
+	"enabled": true,
+	"food": {
+		"oredict": [
+			"cofh:potion",
+			"fish",
+			"listAllfishfresh",
+			"listAllfishraw",
+			"foodCrayfishraw",
+			"foodCrabraw"
+		],
+		"items": [
+			"minecraft:spider_eye",
+			"minecraft:rotten_flesh",
+			"thaumcraft:brain",
+			"minecraft:potion"
+		]
+	}
+}

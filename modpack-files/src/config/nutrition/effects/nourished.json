@@ -1,11 +1,12 @@
 {
-	"name": "toughness",
-	"potion": "nutrition:toughness",
+	"name": "nourished",
+	"potion": "nutrition:nourished",
 	"amplifier": 0,
-	"minimum": 90,
-	"maximum": 100,
+	"minimum": 70,
+	"maximum": 90,
 	"detect": "cumulative",
 	"nutrients": [
+		"dairy",
 		"fruit",
 		"grain",
 		"protein",

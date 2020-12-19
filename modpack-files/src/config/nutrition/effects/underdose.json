@@ -1,0 +1,14 @@
+{
+	"name": "underdose",
+	"potion": "minecraft:wither",
+	"amplifier": 1,
+	"minimum": 95,
+	"maximum": 96,
+	"detect": "all",
+	"nutrients": [
+		"ztoxins"
+	],
+	"cumulative_modifier": 1,
+	"particles": "transparent",
+	"enabled": true
+}

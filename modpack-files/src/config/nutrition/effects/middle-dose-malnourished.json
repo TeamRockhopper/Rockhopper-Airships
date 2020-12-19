@@ -1,0 +1,14 @@
+{
+	"name": "starting-dose-malnourished",
+	"potion": "nutrition:malnourished",
+	"amplifier": 3,
+	"minimum": 50,
+	"maximum": 95,
+	"detect": "all",
+	"nutrients": [
+		"ztoxins"
+	],
+	"cumulative_modifier": 1,
+	"particles": "transparent",
+	"enabled": true
+}

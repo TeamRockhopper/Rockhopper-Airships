@@ -1,0 +1,14 @@
+{
+	"name": "starting-dose-weakness",
+	"potion": "minecraft:weakness",
+	"amplifier": 1,
+	"minimum": 70,
+	"maximum": 95,
+	"detect": "all",
+	"nutrients": [
+		"ztoxins"
+	],
+	"cumulative_modifier": 1,
+	"particles": "transparent",
+	"enabled": true
+}

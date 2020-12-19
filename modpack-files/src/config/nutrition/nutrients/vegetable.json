@@ -2,6 +2,7 @@
 	"name": "vegetable",
 	"icon": "minecraft:carrot",
 	"color": "72dd5a",
+	"decay": 0,
 	"enabled": true,
 	"food": {
 		"oredict": [

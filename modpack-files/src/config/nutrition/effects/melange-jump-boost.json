@@ -1,0 +1,14 @@
+{
+	"name": "melange-jump-boost",
+	"potion": "minecraft:jump_boost",
+	"amplifier": 3,
+	"minimum": 98,
+	"maximum": 99,
+	"detect": "all",
+	"nutrients": [
+		"ztoxins"
+	],
+	"cumulative_modifier": 1,
+	"particles": "transparent",
+	"enabled": true
+}
