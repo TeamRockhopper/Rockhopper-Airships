@@ -3,4 +3,4 @@ This repository is for automatically collecting, tweaking, and configuring mods 
 
 # Contributions
 Contributions to the configuration files and mod list are welcome from the community!
-Last updated: 12.27.2020 11:35pm
+Last updated: 12.28.2020 6:20pm
