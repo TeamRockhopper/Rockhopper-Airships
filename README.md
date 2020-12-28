@@ -3,4 +3,3 @@ This repository is for automatically collecting, tweaking, and configuring mods 
 
 # Contributions
 Contributions to the configuration files and mod list are welcome from the community!
-Server owner and number one player: Rigrok
