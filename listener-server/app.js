@@ -25,6 +25,9 @@ const RCON_PORT = process.env.RCON_PORT;
 const RCON_PASSWORD = process.env.RCON_PASSWORD;
 const DISCORD_BOT_TOKEN = process.env.DISCORD_BOT_TOKEN;
 
+// Store reference to the server heartbeat interval.
+let heartbeatInterval;
+
 // A helper function to sleep asynchronously.
 const sleep = function (ms) {
 	return new Promise(resolve => setTimeout(resolve, ms));
@@ -75,6 +78,7 @@ const execShellCommand = function (cmd) {
 // Detect the pushed webhook for our server repo from GitHub.
 app.post('/', verifyPostData, async function (req, res) {
 	try {
+		clearInterval(heartbeatInterval);
 		let commitId = req.body.after.substring(0, 12);
 		console.log(`  >  Detected new commit ${commitId} ...`);
 
@@ -195,6 +199,10 @@ app.post('/', verifyPostData, async function (req, res) {
 		}).unref();
 		console.log(`  >  Restarted the Minecraft server ...`);
 
+		// Restart the heartbeat service.
+		heartbeatInterval = setInterval(heartbeatFunction, 5000);
+		console.log(`  >  Restarted the heartbeat service ...`);
+
 		// All done!
 		console.log(`  >  Modpack update complete!`);
 
@@ -228,6 +236,45 @@ app.post('/command', async function (req, res) {
 		});
 	}
 });
+
+// Periodically check for signs of life from the server by running `list`.
+let missedBeats = 0;
+const heartbeatFunction = async function () {
+	if (missedBeats > 3) {
+		clearInterval(heartbeatInterval);
+
+		// Restart the server if we've missed several consecutive heartbeats.
+		console.log(`  >  Too many heartbeats were missed ...`);
+		console.log(`  >  Restarting the Minecraft server ...`);
+		const logfile = 'spawned-server.log';
+		const out = fs.openSync(logfile, 'a');
+		const err = fs.openSync(logfile, 'a');
+		spawn('java', [ '-Dfml.queryResult=confirm', '-server', '-XX:+UseG1GC', '-XX:MaxGCPauseMillis=100', '-XX:+UseStringDeduplication', '-XX:+UseAES', '-XX:+UseAESIntrinsics', '-Xmx13G', '-Xms8G', '-XX:UseSSE=3', '-jar', 'modpack.jar', 'nogui' ], {
+			cwd: '/home/tim/mc-rockhopper-airships/',
+			detached: true,
+			stdio: [ 'ignore', out, err ]
+		}).unref();
+		console.log(`  >  Restarted the Minecraft server ...`);
+		missedBeats = 0;
+		heartbeatInterval = setInterval(heartbeatFunction, 1000);
+		console.log('');
+
+	// Otherwise, check for signs of life.
+	} else {
+		try {
+			const rcon = await Rcon.connect({
+				host: 'localhost', port: `${RCON_PORT}`, password: `${RCON_PASSWORD}`
+			});
+			await rcon.send('list');
+			missedBeats = 0;
+
+		// The Minecraft server may not be running; the heartbeat failed.
+		} catch (rconError) {
+			console.log(`  >  Missed heartbeat ${missedBeats} ...`);
+			missedBeats++;
+		}
+	}
+};
 
 // Use a middleware that allows us to validate incoming webhooks against GitHub.
 app.use((err, req, res, next) => {
