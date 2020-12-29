@@ -200,7 +200,7 @@ app.post('/', verifyPostData, async function (req, res) {
 		console.log(`  >  Restarted the Minecraft server ...`);
 
 		// Restart the heartbeat service.
-		heartbeatInterval = setInterval(heartbeatFunction, 5000);
+		heartbeatInterval = setInterval(heartbeatFunction, 20000);
 		console.log(`  >  Restarted the heartbeat service ...`);
 
 		// All done!
@@ -256,7 +256,7 @@ const heartbeatFunction = async function () {
 		}).unref();
 		console.log(`  >  Restarted the Minecraft server ...`);
 		missedBeats = 0;
-		heartbeatInterval = setInterval(heartbeatFunction, 1000);
+		heartbeatInterval = setInterval(heartbeatFunction, 20000);
 		console.log('');
 
 	// Otherwise, check for signs of life.
