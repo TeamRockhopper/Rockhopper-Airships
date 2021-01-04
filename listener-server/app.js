@@ -107,7 +107,7 @@ app.post('/', verifyPostData, async function (req, res) {
 		console.log(`  >  Removed old local modpack build files ...`);
 
 		// Build the updated modpack into files for uploading.
-		await execShellCommand(`java -jar ../launcher/builder.jar --version "${commitId}" --input ../modpack-files/ --output upload --manifest-dest "upload/rockhopper-airships.json"`);
+		await execShellCommand(`java -jar ../launcher/builder.jar --version "${commitId}" --input ../modpack-files/ --output upload --manifest-dest "upload/rockhopper-skies.json"`);
 		console.log(`  >  Built updated modpack ...`);
 
 		// Create a package listing for the updated modpack.
@@ -123,9 +123,9 @@ app.post('/', verifyPostData, async function (req, res) {
 		    },
 				{
 					title: 'Rockhopper Airship Survival',
-					name: 'rockhopper-airships',
+					name: 'rockhopper-skies',
 					version: `${commitId}`,
-					location: 'rockhopper-airships.json',
+					location: 'rockhopper-skies.json',
 					priority: 1
 				}
 		  ]
